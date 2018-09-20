@@ -14,7 +14,8 @@ char *str_reverse(char const *str) {
     result[i] = str[len-i-1];
   }
   result[len] = '\0';
-  
+
+  free(result);
   return result;
 }
 
@@ -26,9 +27,11 @@ char *palindrome(char const *str) {
 
   rev = str_reverse(str);
   i = 0;
+  
   while (result && str[i]) {
     if (str[i] != rev[i]) {
       result = false;
+      free(rev);
     }
     ++i;
   }

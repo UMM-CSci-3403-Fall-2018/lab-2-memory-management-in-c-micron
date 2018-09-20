@@ -3,7 +3,9 @@
 #include "palindrome.h"
 
 void is_palindrome(char const *str) {
-  ASSERT_STREQ(palindrome(str), "Yes");
+  char *result;
+  result = palindrome(str);
+  ASSERT_STREQ(result, "Yes");
 }
 
 void not_palindrome(char const *str) {
@@ -12,6 +14,7 @@ void not_palindrome(char const *str) {
 
 TEST(Palindrome, HandlesEmptyString) {
   is_palindrome("");
+  free(result);
 }
 
 TEST(Palindrome, HandlesSingletons) {
