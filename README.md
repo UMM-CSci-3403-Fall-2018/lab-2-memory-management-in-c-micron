@@ -6,7 +6,7 @@
  * [Fixing palindromes](#fixing-palindromes)
  * [Disemvowel](#disemvowel)
 * [What to turn in](#what-to-turn-in)
-
+* [Important commands](#important-commands)
 ---
 
 # Background
@@ -251,3 +251,17 @@ Your final repository should have:
   * As well as completing `disemvowel.c` this could involve changes to `disemvowel_test.cpp` and/or `main.c`.
 
 You shouldn't need to change any of the `.h` files for either part.
+
+## Important commands
+For Palindrome:
+g++ -Wall -g -o palindrome_test palindrome_test.cpp palindrome.c -lgtest
+g++ -Wall -g -o main main.c palindrome.c
+./main < sample_input.txt
+valgrind --leak-check=full ./palindrome_test
+valgrind --leak-check=full ./main < sample_input.txt
+For Disemvowel:
+g++ -Wall -g -o disemvowel_test disemvowel_test.cpp disemvowel.c -lgtest
+g++ -Wall -g -o main main.c disemvowel.c
+./main < sample_input.txt
+valgrind --leak-check=full ./disemvowel_test
+valgrind --leak-check=full ./main < sample_input.txt
